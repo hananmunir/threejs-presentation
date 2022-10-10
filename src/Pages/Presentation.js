@@ -1,18 +1,21 @@
 import React from "react";
 import Slideshow from "../Components/Slideshow";
+import { slides } from "../Components/data";
 
 export default function Presentation() {
   return (
     <div>
       <Slideshow />
-      <section style={{ height: "100vh" }} className='a'></section>
-      <section style={{ height: "100vh" }} className='b'></section>
-      <section style={{ height: "100vh" }} className='c'></section>
-      <section style={{ height: "100vh" }} className='d'></section>
-      <section style={{ height: "100vh" }} className='e'></section>
-      <section style={{ height: "100vh" }} className='f'></section>
-      <section style={{ height: "100vh" }} className='g'></section>
-      <section style={{ height: "100vh" }} className='h'></section>
+      <section style={{ height: "100vh" }}></section>
+      {slides.map((slide, index) => {
+        return (
+          <section
+            key={index}
+            style={{ height: "200vh" }}
+            className={slide.trigger.substring(1)}
+          ></section>
+        );
+      })}
     </div>
   );
 }

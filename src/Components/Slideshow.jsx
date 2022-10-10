@@ -1,14 +1,27 @@
 import { Canvas, useThree } from "@react-three/fiber";
-import React, { useMemo, useEffect } from "react";
-import { gsap } from "gsap";
+import React from "react";
 import * as THREE from "three";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Shadow } from "@react-three/drei";
-import Slide from "./Slide";
-import Text from "./Text";
+import { OrbitControls, Shadow, Text } from "@react-three/drei";
+import Slides from "./index";
 
-const doggos =
-  "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+// Loads the skybox texture and applies it to the scene.
+function SkyBox() {
+  const { scene } = useThree();
+  const loader = new THREE.CubeTextureLoader();
+  // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
+  const texture = loader.load([
+    "/Images/stars.jpg",
+    "/Images/stars.jpg",
+    "/Images/stars.jpg",
+    "/Images/stars.jpg",
+    "/Images/stars.jpg",
+    "/Images/stars.jpg",
+  ]);
+
+  // Set the scene background property to the resulting texture.
+  scene.background = texture;
+  return null;
+}
 
 export default function Slideshow() {
   return (
@@ -20,11 +33,11 @@ export default function Slideshow() {
       }}
     >
       <Canvas camera={{ fov: 75, near: 0.1, far: 80, position: [0, 0, 5] }}>
-        <Text />
-        <group>
-          <Slide url={doggos} />
-        </group>
-        <Shadow />
+        {/* <Text /> */}
+        <Slides />
+
+        <SkyBox />
+        <OrbitControls />
       </Canvas>
     </div>
   );
