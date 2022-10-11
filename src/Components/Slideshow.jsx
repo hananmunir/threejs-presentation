@@ -2,6 +2,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
 import Slides from "./index";
+import Text from "./Text";
 
 // const CameraController = () => {
 //   const { camera, gl } = useThree();
@@ -85,9 +86,8 @@ export default function Slideshow() {
     >
       <Canvas camera={{ fov: 75, near: 0.1, far: 80, position: [0, 0, 5] }}>
         <ambientLight intensity={1} color={"#ffffff"} />
-
+        <Text />
         <SkyBox />
-
         <Slides />
       </Canvas>
     </div>
