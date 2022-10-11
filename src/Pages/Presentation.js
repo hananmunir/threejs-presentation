@@ -16,18 +16,16 @@ export default function Presentation() {
   return (
     <div data-scroll-container>
       <Logo />
-
       <Slideshow />
-
       <section data-scroll-section style={{ height: "100vh" }}></section>
+      <section
+        data-scroll-section
+        className='textTrigger'
+        style={{ height: "100vh" }}
+      ></section>
       {slides.map((slide, index) => {
         return (
           <>
-            <section
-              data-scroll-section
-              id='textTrigger'
-              style={{ height: "100vh" }}
-            ></section>
             <section
               key={index}
               style={{ height: "200vh" }}

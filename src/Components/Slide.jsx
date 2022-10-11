@@ -1,4 +1,4 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import * as THREE from "three";
@@ -33,26 +33,25 @@ const Texture = ({
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Target the two specific elements we have forwarded refs to
-      if (direction === "right") {
-        gsap.to(slideRef.current.position, {
+      if (direction === "down" || direction === "up") {
+        gsap.to(slideRef.current?.position, {
           scrollTrigger: {
             trigger: trigger,
-            scrub: 1,
+            scrub: 1.5,
           },
-          x: -10,
-          z: 6,
+          y: direction === "down" ? -10 : 10,
           duration: 1,
-          yoyo: true,
         });
       } else {
-        gsap.to(slideRef.current.position, {
+        gsap.to(slideRef.current?.position, {
           scrollTrigger: {
             trigger: trigger,
-            scrub: 1,
+            scrub: 1.5,
           },
-          z: 10,
+          x: direction === "right" ? -8 : direction === "left" ? 6 : 0,
+          z: direction === "right" || direction === "left" ? 6 : 10,
+
           duration: 1,
-          yoyo: true,
         });
       }
     });
@@ -65,10 +64,10 @@ const Texture = ({
 
     slideRef.current.rotation.x = Math.cos(t / 4) / 6;
     slideRef.current.rotation.y = Math.sin(t / 4) / 6;
-    slideRef.current.position.y = (1 + Math.sin(t / 1.5)) / 6;
+
     if (isVideo) {
       if (
-        slideRef.current.position.distanceTo(new THREE.Vector3(0, 0, 0)) < 8
+        slideRef.current?.position.distanceTo(new THREE.Vector3(0, 0, 0)) < 8
       ) {
         video.play();
       } else {
@@ -92,7 +91,10 @@ const Texture = ({
       <mesh ref={slideRef} position={position}>
         {!isVideo ? (
           <>
-            <planeGeometry attach='geometry' args={[7, 4, 4]} />
+            <planeGeometry
+              attach='geometry'
+              args={window.innerWidth < 500 ? [6, 10] : [7, 4, 4]}
+            />
             <meshBasicMaterial
               attach='material'
               map={texture}

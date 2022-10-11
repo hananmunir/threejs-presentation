@@ -17,14 +17,14 @@ export default function Text() {
   //reduce opacity on scroll
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(textRef.current, {
-        opacity: 0,
-        duration: 1,
-        ease: "easeIn",
+      gsap.to(textRef.current.position, {
         scrollTrigger: {
-          trigger: "#textTrigger",
+          trigger: ".textTrigger",
           scrub: 1,
         },
+        y: 100,
+        duration: 1,
+        ease: "easeIn",
       });
     });
 
@@ -32,8 +32,20 @@ export default function Text() {
   }, []);
 
   return (
-    <mesh ref={textRef} position={[-38, -2, -25]}>
-      <textGeometry args={["Virtual Deck", { font, size: 10, height: 1 }]} />
+    <mesh
+      ref={textRef}
+      position={window.innerWidth < 500 ? [-11, 0, -30] : [-38, 0, -25]}
+    >
+      <textGeometry
+        args={[
+          "Virtual Pitch Deck",
+          {
+            font,
+            size: window.innerWidth < 500 ? 2 : 7,
+            height: 0.6,
+          },
+        ]}
+      />
       <meshBasicMaterial attach='material' color={"white"} />
     </mesh>
   );
