@@ -39,7 +39,8 @@ const Texture = ({
             trigger: trigger,
             scrub: 1.5,
           },
-          y: direction === "down" ? -10 : 10,
+          y: direction === "down" ? -30 : 30,
+
           duration: 1,
         });
       } else {
@@ -49,7 +50,12 @@ const Texture = ({
             scrub: 1.5,
           },
           x: direction === "right" ? -8 : direction === "left" ? 6 : 0,
-          z: direction === "right" || direction === "left" ? 6 : 10,
+          z:
+            direction === "right" || direction === "left"
+              ? window.innerWidth < 500
+                ? 1
+                : 6
+              : 10,
 
           duration: 1,
         });
@@ -69,9 +75,9 @@ const Texture = ({
       if (
         slideRef.current?.position.distanceTo(new THREE.Vector3(0, 0, 0)) < 8
       ) {
-        video.play();
+        video?.play();
       } else {
-        video.pause();
+        video?.pause();
       }
     }
   });

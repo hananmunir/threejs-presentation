@@ -31,14 +31,14 @@ export const slides = [
   {
     title: "Slide3",
     src: "/Slides/s3.jpg",
-    position: [0, 100, 2],
+    position: [0, 100, window.innerWidth < 500 ? -5 : 2],
     trigger: ".e",
     direction: "down",
   },
   {
     title: "Slide4",
     src: "/Slides/s4.jpg",
-    position: [0, -100, 2],
+    position: [0, -100, window.innerWidth < 500 ? -5 : 2],
     trigger: ".f",
     direction: "up",
   },
@@ -69,5 +69,27 @@ export const slides = [
     position: [0, 0, -1000],
     trigger: ".j",
     direction: "center",
+  },
+  {
+    title: "Slide9",
+    src: "/Slides/s9.jpg",
+    position: [0, 0, -1100],
+    trigger: ".k",
+    direction: "center",
+
+  },
+  {
+    title: "Slide10",
+    src: "/Slides/s10.jpg",
+    position: [0, 0, -1200],
+    trigger: ".l",
+    direction: "center",
+  },
+  {
+    title: "Slide11",
+    src: "/Slides/s11.jpg",
+    position: [0, 0, -1300],
+    trigger: ".m",
+    direction: "center"
   },
 ];

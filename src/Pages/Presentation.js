@@ -25,14 +25,12 @@ export default function Presentation() {
       ></section>
       {slides.map((slide, index) => {
         return (
-          <>
-            <section
-              key={index}
-              style={{ height: "200vh" }}
-              className={slide.trigger.substring(1)}
-              data-scroll-section
-            ></section>
-          </>
+          <section
+            key={index}
+            style={{ height: "200vh" }}
+            className={slide.trigger.substring(1)}
+            data-scroll-section
+          ></section>
         );
       })}
       <section data-scroll-section style={{ height: "100vh" }}></section>

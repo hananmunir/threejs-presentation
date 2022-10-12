@@ -14,7 +14,7 @@ extend({ TextGeometry });
 export default function Text() {
   const font = new FontLoader().parse(Font);
   const textRef = useRef();
-  //reduce opacity on scroll
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(textRef.current.position, {
@@ -34,14 +34,14 @@ export default function Text() {
   return (
     <mesh
       ref={textRef}
-      position={window.innerWidth < 500 ? [-11, 0, -30] : [-38, 0, -25]}
+      position={window.innerWidth < 500 ? [-11, 0, -30] : [-33, 0, -25]}
     >
       <textGeometry
         args={[
           "Virtual Pitch Deck",
           {
             font,
-            size: window.innerWidth < 500 ? 2 : 7,
+            size: window.innerWidth < 500 ? 2 : 6,
             height: 0.6,
           },
         ]}
