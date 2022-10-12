@@ -1,7 +1,7 @@
 import { Canvas, useThree } from "@react-three/fiber";
 import React from "react";
 import * as THREE from "three";
-import Slides from "./index";
+import Slides from "./SlideComponent/index";
 import Text from "./Text";
 
 // Loads the skybox texture and applies it to the scene.
