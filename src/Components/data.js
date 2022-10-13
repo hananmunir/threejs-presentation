@@ -1,3 +1,10 @@
+/*
+ * src: path to the image
+ * position: position of the image in the scene before it comes to focus
+ * trigger:
+ * direction: direction of the image from where its going to appear
+ */
+
 export const slides = [
   {
     title: "intro",
@@ -17,79 +24,78 @@ export const slides = [
   {
     title: "Slide1",
     src: "/Slides/s1.jpg",
-    position: [500, 0, -300],
+    position: [100, 0, -100],
     trigger: ".c",
     direction: "right",
   },
   {
     title: "Slide2",
     src: "/Slides/s2.jpg",
-    position: [-500, 0, -400],
+    position: [-100, 0, -100],
     trigger: ".d",
     direction: "left",
   },
   {
     title: "Slide3",
     src: "/Slides/s3.jpg",
-    position: [0, 100, window.innerWidth < 500 ? -5 : 2],
+    position: [0, 0, -100],
     trigger: ".e",
-    direction: "down",
+    direction: "center",
   },
   {
     title: "Slide4",
     src: "/Slides/s4.jpg",
-    position: [0, -100, window.innerWidth < 500 ? -5 : 2],
+    position: [0, 0, -100],
     trigger: ".f",
-    direction: "up",
+    direction: "center",
   },
   {
     title: "Slide5",
     src: "/Slides/s5.jpg",
-    position: [0, 0, -700],
+    position: [0, 0, -100],
     trigger: ".g",
     direction: "center",
   },
   {
     title: "Slide6",
     src: "/Slides/s6.jpg",
-    position: [0, 0, -800],
+    position: [0, 0, -100],
     trigger: ".h",
     direction: "center",
   },
   {
     title: "Slide7",
     src: "/Slides/s7.jpg",
-    position: [0, 0, -900],
+    position: [0, 0, -100],
     trigger: ".i",
     direction: "center",
   },
   {
     title: "Slide8",
     src: "/Slides/s8.jpg",
-    position: [0, 0, -1000],
+    position: [0, 0, -100],
     trigger: ".j",
     direction: "center",
   },
   {
     title: "Slide9",
     src: "/Slides/s9.jpg",
-    position: [0, 0, -1100],
+    position: [0, 0, -100],
     trigger: ".k",
     direction: "center",
-
   },
   {
     title: "Slide10",
     src: "/Slides/s10.jpg",
-    position: [0, 0, -1200],
+    position: [0, 0, -100],
     trigger: ".l",
     direction: "center",
   },
   {
     title: "Slide11",
     src: "/Slides/s11.jpg",
-    position: [0, 0, -1300],
+    position: [0, 0, -100],
     trigger: ".m",
-    direction: "center"
+    direction: "center",
   },
 ];

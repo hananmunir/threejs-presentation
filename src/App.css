@@ -1,22 +1,22 @@
-:root {
-  --shadow: #000000;
-  --scrollbarBG: #000000;
-  --thumbBG: #e1e1e1;
-}
+  /* :root {
+    --shadow: #000000;
+    --scrollbarBG: #000000;
+    --thumbBG: #e1e1e1;
+  }
 
-::-webkit-scrollbar {
-  width: 10px;
+  ::-webkit-scrollbar {
+    width: 10px;
 
-}
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
 
-}
+  }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG);
-  box-shadow: 0 -100vh 0 100vh var(--shadow), 0 0 15px 5px black;
-  border-radius: 8px;
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    box-shadow: 0 -100vh 0 100vh var(--shadow), 0 0 15px 5px black;
+    border-radius: 8px;
 
-}
+  } */

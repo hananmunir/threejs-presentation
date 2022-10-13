@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# How the app works
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+So what I did was use scroll trigger functionality of gsap, it gets triggered when the scroll reaches a specific element in the DOM. So What I did was create a Section corrosponding to each slide, when the scroll bar reaches that Section the slide corrosponding to that element is shown.
 
-## Available Scripts
+# Data Array
 
-In the project directory, you can run:
+In the data array, you have triggers, Position and direction. These are the important things. Trigger you can set anything, but it should be unique and start with '.', because it would serve as the name of the class. This trigger name will also be used to create the section. Position of the slide should start at -100 at Z axis so it would seem like the slides are coming from somewhere far. The direction is what direction you want them to appear from. 'center' is from the center of the screen, you can also choose 'right' or 'left but then you would have to make the y of the position of that slide 100 or -100 respectively.
 
-### `npm start`
+# Dynamic Props
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Everything is dynamic, you don't have to change anything in the code, just change the data array and you are good to go. If you want the slides to be loaded dynamically, make a file that would create an array of objects and then import that file in the /Components/SlideComponent/index.jsx and use that array instead of the data array.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# fixes
 
-### `npm test`
+Removed the slides that were transitioning in top and bottom direction, they were there just to show there are different options.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Commented the scrollbar styles
 
-### `npm run build`
+Removed the fixed positioning and instead made it sticky with the parent container being the whats its relative to.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 200vh height
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+So the height is how long would the slide would take to appear, if the height is 100vh it slides would take less time to reach the screen but if you increase the height of the section, slides would take more time to reach.

@@ -29,12 +29,20 @@ export default function Slideshow() {
       style={{
         width: "100%",
         height: "100vh",
-        position: "fixed",
+        position: "sticky",
+        top: 0,
+        left: 0,
       }}
     >
       <Canvas camera={{ fov: 75, near: 0.1, far: 80, position: [0, 0, 5] }}>
         <ambientLight intensity={1} color={"#ffffff"} />
-        <Text />
+        <Text
+          text={"Virtual Pitch Deck"}
+          smPosition={[-11, 0, -30]}
+          lgPosition={[-33, 0, -25]}
+          smSize={2}
+          lgSize={6}
+        />
         <SkyBox />
         <Slides />
       </Canvas>

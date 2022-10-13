@@ -14,7 +14,7 @@ export default function Presentation() {
   }, []);
 
   return (
-    <div data-scroll-container>
+    <div data-scroll-container style={{ position: "relative" }}>
       <Logo />
       <Slideshow />
       <section data-scroll-section style={{ height: "100vh" }}></section>

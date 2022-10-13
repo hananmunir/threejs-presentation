@@ -11,7 +11,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 extend({ TextGeometry });
 
-export default function Text() {
+export default function Text({
+  smPosition,
+  lgPosition,
+  text,
+  lgSize,
+  smSize,
+  ...props
+}) {
   const font = new FontLoader().parse(Font);
   const textRef = useRef();
 
@@ -34,14 +41,14 @@ export default function Text() {
   return (
     <mesh
       ref={textRef}
-      position={window.innerWidth < 500 ? [-11, 0, -30] : [-33, 0, -25]}
+      position={window.innerWidth < 500 ? smPosition : lgPosition}
     >
       <textGeometry
         args={[
-          "Virtual Pitch Deck",
+          text,
           {
             font,
-            size: window.innerWidth < 500 ? 2 : 6,
+            size: window.innerWidth < 500 ? smSize : lgSize,
             height: 0.6,
           },
         ]}
